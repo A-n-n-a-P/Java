@@ -55,7 +55,7 @@ public class FilesSearch2 {
     }
 
     public static void addToFile(Map<String, List<File>> fileHashMap) throws IOException {
-        PrintWriter duplicates = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\ania_\\Desktop\\Projects\\ForStudy\\duplicatesFiles.txt", true)));
+        PrintWriter duplicates = new PrintWriter(new BufferedWriter(new FileWriter("pathForDuplicatesFile", true)));
         float sizeDublicates = 0.0f;
         for (List<File> value : fileHashMap.values()) {
             if(value.size() > 1) {
@@ -96,7 +96,7 @@ public class FilesSearch2 {
         File dirs = new File(args[0]);
         Map<String, List<File>> fileHashMap = new HashMap<>();
         walkFileTree(dirs, fileHashMap);
-        writeReport(fileHashMap, "C:\\Users\\ania_\\Desktop\\Projects\\ForStudy\\duplicatesFiles.txt");
+        writeReport(fileHashMap, "pathForDuplicatesFile");
     }
 
     public static void walkFileTree(File folder, Map<String, List<File>> fileMap) throws NoSuchAlgorithmException, IOException {
